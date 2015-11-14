@@ -1,0 +1,1948 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="mukellefyeniModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Adres">
+          <Key>
+            <PropertyRef Name="AdresBaglantiliKisiTC" />
+          </Key>
+          <Property Name="AdresBaglantiliKisiTC" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="ILID" Type="int" />
+          <Property Name="Telefon1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telefon2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telefon3" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMail" Type="nvarchar" MaxLength="50" />
+          <Property Name="SubeKodu" Type="nvarchar" MaxLength="50" />
+          <Property Name="BankaAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="HesapNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="IBAN" Type="nchar" MaxLength="10" />
+          <Property Name="AdresAciklama" Type="nvarchar" MaxLength="253" />
+          <Property Name="KaydiGirenKullaniciID" Type="int" />
+          <Property Name="KaydiDegistirenKullaniciID" Type="int" />
+          <Property Name="KayitTarihi" Type="datetime" />
+          <Property Name="KaydiDegistirmeTarihi" Type="datetime" />
+          <Property Name="AktifMi" Type="bit" />
+        </EntityType>
+        <EntityType Name="Ajanda">
+          <Key>
+            <PropertyRef Name="AjandakKayitID" />
+          </Key>
+          <Property Name="AjandakKayitID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Avukat">
+          <Key>
+            <PropertyRef Name="AvukatID" />
+          </Key>
+          <Property Name="AvukatID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TC" Type="varchar" MaxLength="11" />
+          <Property Name="Adi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Soyadi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Brans" Type="nvarchar" MaxLength="50" />
+          <Property Name="BaroSicilNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="TBBNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="VergiDairesi" Type="nvarchar" MaxLength="50" />
+          <Property Name="VergiNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cinsiyet" Type="bit" />
+          <Property Name="CalisiyorMu" Type="bit" />
+          <Property Name="KaydiGirenKullaniciID" Type="int" />
+          <Property Name="KaydiDegistirenKullaniciID" Type="int" />
+          <Property Name="KayitTarihi" Type="datetime" />
+          <Property Name="KaydiDegistirmeTarihi" Type="datetime" />
+          <Property Name="AktifMi" Type="bit" />
+        </EntityType>
+        <EntityType Name="BuroBilgileri">
+          <Key>
+            <PropertyRef Name="BuroID" />
+          </Key>
+          <Property Name="BuroID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ILID" Type="int" />
+          <Property Name="SorumluSabitAvukatID" Type="int" />
+          <Property Name="BuroTanimi" Type="nvarchar" MaxLength="250" />
+          <Property Name="Adres" Type="nvarchar" MaxLength="250" />
+          <Property Name="Telefon" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+          <Property Name="BaroBilgileri" Type="nvarchar" MaxLength="210" />
+          <Property Name="IcraDairesi" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Celse">
+          <Key>
+            <PropertyRef Name="CelseID" />
+          </Key>
+          <Property Name="CelseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DavaID" Type="int" />
+          <Property Name="AvukatID" Type="int" />
+          <Property Name="AjandakKayitID" Type="int" />
+          <Property Name="CelseTarihi" Type="datetime" />
+          <Property Name="Hakim" Type="nvarchar" MaxLength="50" />
+          <Property Name="Savci" Type="nvarchar" MaxLength="50" />
+          <Property Name="Karar" Type="nvarchar" MaxLength="50" />
+          <Property Name="ErtelemeMazeret" Type="nvarchar" MaxLength="550" />
+          <Property Name="ErtelemeTarihi" Type="datetime" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="250" />
+          <Property Name="KaydiGirenKullaniciID" Type="int" />
+          <Property Name="KaydiDegistirenKullaniciID" Type="int" />
+          <Property Name="KayitTarihi" Type="datetime" />
+          <Property Name="KaydiDegistirmeTarihi" Type="datetime" />
+          <Property Name="AktifMi" Type="bit" />
+        </EntityType>
+        <EntityType Name="Dava">
+          <Key>
+            <PropertyRef Name="DavaID" />
+          </Key>
+          <Property Name="DavaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AvukatID" Type="int" />
+          <Property Name="MahkemeID" Type="int" />
+          <Property Name="AjandakKayitID" Type="int" />
+          <Property Name="DosyaNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="DavaTipi" Type="nvarchar" MaxLength="50" />
+          <Property Name="DavaDurumu" Type="nvarchar" MaxLength="50" />
+          <Property Name="DavaKonusu" Type="nvarchar" MaxLength="50" />
+          <Property Name="DavaAcildigiTarihi" Type="datetime" />
+          <Property Name="Savci1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Savci2" Type="nvarchar" MaxLength="50" />
+          <Property Name="DavaBedeli" Type="money" />
+          <Property Name="KarsiTarafAvukatAd" Type="nvarchar" MaxLength="50" />
+          <Property Name="KarsiTarafAvukatSoyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="KarsiTarafAvukatAdres" Type="nvarchar" MaxLength="150" />
+          <Property Name="KarsiTarafAvukatTelefon" Type="nvarchar" MaxLength="150" />
+          <Property Name="Davaci" Type="nvarchar" MaxLength="50" />
+          <Property Name="Davali" Type="nvarchar" MaxLength="50" />
+          <Property Name="KaydiGirenKullaniciID" Type="int" />
+          <Property Name="KaydiDegistirenKullaniciID" Type="int" />
+          <Property Name="KayitTarihi" Type="datetime" />
+          <Property Name="KaydiDegistirmeTarihi" Type="datetime" />
+          <Property Name="AktifMi" Type="bit" />
+        </EntityType>
+        <EntityType Name="ililce">
+          <Key>
+            <PropertyRef Name="ILID" />
+          </Key>
+          <Property Name="ILID" Type="int" Nullable="false" />
+          <Property Name="IlKodu" Type="int" />
+          <Property Name="Il" Type="nvarchar" MaxLength="50" />
+          <Property Name="IlceKodu" Type="int" />
+          <Property Name="Ilce" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Kullanici">
+          <Key>
+            <PropertyRef Name="KullaniciID" />
+          </Key>
+          <Property Name="KullaniciID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Adi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Soyadi" Type="nvarchar" MaxLength="50" />
+          <Property Name="KullaniciAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="50" />
+          <Property Name="KullaniciYetkiID" Type="int" />
+          <Property Name="KaydiGirenKullaniciID" Type="int" />
+          <Property Name="KaydiDegistirenKullaniciID" Type="int" />
+          <Property Name="KayitTarihi" Type="datetime" />
+          <Property Name="KaydiDegistirmeTarihi" Type="datetime" />
+          <Property Name="AktifMi" Type="bit" />
+        </EntityType>
+        <EntityType Name="KullaniciYetki">
+          <Key>
+            <PropertyRef Name="KullaniciYetkiID" />
+          </Key>
+          <Property Name="KullaniciYetkiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KullaniciID" Type="int" />
+          <Property Name="KullaniciYetkiAciklama" Type="nvarchar" MaxLength="100" />
+          <Property Name="KullaniciYetkisi" Type="nchar" MaxLength="100" />
+          <Property Name="KaydiGirenKullaniciID" Type="int" />
+          <Property Name="KaydiDegistirenKullaniciID" Type="int" />
+          <Property Name="KayitTarihi" Type="datetime" />
+          <Property Name="KaydiDegistirmeTarihi" Type="datetime" />
+          <Property Name="AktifMi" Type="bit" />
+        </EntityType>
+        <EntityType Name="Mahkeme">
+          <Key>
+            <PropertyRef Name="MahkemeID" />
+          </Key>
+          <Property Name="MahkemeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MahkemeAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="MahkemeNO" Type="nvarchar" MaxLength="50" />
+          <Property Name="MahkemeTuru" Type="nvarchar" MaxLength="50" />
+          <Property Name="ILID" Type="int" />
+          <Property Name="KaydiGirenKullaniciID" Type="int" Nullable="false" />
+          <Property Name="KaydiDegistirenKullaniciID" Type="int" />
+          <Property Name="KayitTarihi" Type="datetime" />
+          <Property Name="KaydiDegistirmeTarihi" Type="datetime" />
+          <Property Name="AktifMi" Type="bit" />
+        </EntityType>
+        <EntityType Name="Muvekkil">
+          <Key>
+            <PropertyRef Name="MuvekkilID" />
+          </Key>
+          <Property Name="MuvekkilID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="50" />
+          <Property Name="Soyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="TC" Type="varchar" MaxLength="11" />
+          <Property Name="Cinsiyet" Type="bit" />
+          <Property Name="ILID" Type="int" />
+          <Property Name="KaydiGirenKullaniciID" Type="int" />
+          <Property Name="KaydiDegistirenKullaniciID" Type="int" />
+          <Property Name="KayitTarihi" Type="datetime" />
+          <Property Name="KaydiDegistirmeTarihi" Type="datetime" />
+          <Property Name="AktifMi" Type="bit" />
+        </EntityType>
+        <EntityType Name="NufusDetay">
+          <Key>
+            <PropertyRef Name="NufusBaglantiliKisiTC" />
+          </Key>
+          <Property Name="NufusBaglantiliKisiTC" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="NufusCuzdaniSeriNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="NufusCuzdaniNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="AnaAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="BabaAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="DogumTarihi" Type="datetime" />
+          <Property Name="DogumYeri" Type="nvarchar" MaxLength="50" />
+          <Property Name="Dini" Type="nvarchar" MaxLength="50" />
+          <Property Name="KanGrubu" Type="nvarchar" MaxLength="50" />
+          <Property Name="ILID" Type="int" />
+          <Property Name="Mahalle" Type="nvarchar" MaxLength="50" />
+          <Property Name="Koy" Type="nvarchar" MaxLength="50" />
+          <Property Name="CiltNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="AileSiraNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="SiraNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="NufusKayitnNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="VerilisTarihi" Type="datetime" />
+          <Property Name="VerilisNedeni" Type="nvarchar" MaxLength="50" />
+          <Property Name="VerildigiYer" Type="nvarchar" MaxLength="50" />
+          <Property Name="KaydiGirenKullaniciID" Type="int" />
+          <Property Name="KaydiDegistirenKullaniciID" Type="int" />
+          <Property Name="KayitTarihi" Type="datetime" />
+          <Property Name="KaydiDegistirmeTarihi" Type="datetime" />
+          <Property Name="AktifMi" Type="bit" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Web">
+          <Key>
+            <PropertyRef Name="WebKayitID" />
+          </Key>
+          <Property Name="WebKayitID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="URL" Type="nvarchar" MaxLength="50" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="50" />
+          <Property Name="KaydiGirenKullaniciID" Type="int" />
+          <Property Name="KaydiDegistirenKullaniciID" Type="int" />
+          <Property Name="KayitTarihi" Type="datetime" />
+          <Property Name="KaydiDegistirmeTarihi" Type="datetime" />
+          <Property Name="AktifMi" Type="bit" />
+        </EntityType>
+        <Association Name="FK_Adres_ililce">
+          <End Role="ililce" Type="Self.ililce" Multiplicity="0..1" />
+          <End Role="Adres" Type="Self.Adres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ililce">
+              <PropertyRef Name="ILID" />
+            </Principal>
+            <Dependent Role="Adres">
+              <PropertyRef Name="ILID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Adres_Kullanici">
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+          <End Role="Adres" Type="Self.Adres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Adres">
+              <PropertyRef Name="KaydiGirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Adres_Kullanici1">
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+          <End Role="Adres" Type="Self.Adres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Adres">
+              <PropertyRef Name="KaydiDegistirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Avukat_Adres">
+          <End Role="Adres" Type="Self.Adres" Multiplicity="0..1" />
+          <End Role="Avukat" Type="Self.Avukat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Adres">
+              <PropertyRef Name="AdresBaglantiliKisiTC" />
+            </Principal>
+            <Dependent Role="Avukat">
+              <PropertyRef Name="TC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Avukat_Kullanici">
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+          <End Role="Avukat" Type="Self.Avukat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Avukat">
+              <PropertyRef Name="KaydiGirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Avukat_Kullanici1">
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+          <End Role="Avukat" Type="Self.Avukat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Avukat">
+              <PropertyRef Name="KaydiDegistirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Avukat_NufusDetay">
+          <End Role="NufusDetay" Type="Self.NufusDetay" Multiplicity="0..1" />
+          <End Role="Avukat" Type="Self.Avukat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NufusDetay">
+              <PropertyRef Name="NufusBaglantiliKisiTC" />
+            </Principal>
+            <Dependent Role="Avukat">
+              <PropertyRef Name="TC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BuroBilgileri_Avukat">
+          <End Role="Avukat" Type="Self.Avukat" Multiplicity="0..1" />
+          <End Role="BuroBilgileri" Type="Self.BuroBilgileri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Avukat">
+              <PropertyRef Name="AvukatID" />
+            </Principal>
+            <Dependent Role="BuroBilgileri">
+              <PropertyRef Name="SorumluSabitAvukatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BuroBilgileri_ililce">
+          <End Role="ililce" Type="Self.ililce" Multiplicity="0..1" />
+          <End Role="BuroBilgileri" Type="Self.BuroBilgileri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ililce">
+              <PropertyRef Name="ILID" />
+            </Principal>
+            <Dependent Role="BuroBilgileri">
+              <PropertyRef Name="ILID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Celse_Ajanda">
+          <End Role="Ajanda" Type="Self.Ajanda" Multiplicity="0..1" />
+          <End Role="Celse" Type="Self.Celse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ajanda">
+              <PropertyRef Name="AjandakKayitID" />
+            </Principal>
+            <Dependent Role="Celse">
+              <PropertyRef Name="AjandakKayitID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Celse_Avukat">
+          <End Role="Avukat" Type="Self.Avukat" Multiplicity="0..1" />
+          <End Role="Celse" Type="Self.Celse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Avukat">
+              <PropertyRef Name="AvukatID" />
+            </Principal>
+            <Dependent Role="Celse">
+              <PropertyRef Name="AvukatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Celse_Dava">
+          <End Role="Dava" Type="Self.Dava" Multiplicity="0..1" />
+          <End Role="Celse" Type="Self.Celse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dava">
+              <PropertyRef Name="DavaID" />
+            </Principal>
+            <Dependent Role="Celse">
+              <PropertyRef Name="DavaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Celse_Kullanici">
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+          <End Role="Celse" Type="Self.Celse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Celse">
+              <PropertyRef Name="KaydiGirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Celse_Kullanici1">
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+          <End Role="Celse" Type="Self.Celse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Celse">
+              <PropertyRef Name="KaydiDegistirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dava_Ajanda">
+          <End Role="Ajanda" Type="Self.Ajanda" Multiplicity="0..1" />
+          <End Role="Dava" Type="Self.Dava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ajanda">
+              <PropertyRef Name="AjandakKayitID" />
+            </Principal>
+            <Dependent Role="Dava">
+              <PropertyRef Name="AjandakKayitID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dava_Avukat">
+          <End Role="Avukat" Type="Self.Avukat" Multiplicity="0..1" />
+          <End Role="Dava" Type="Self.Dava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Avukat">
+              <PropertyRef Name="AvukatID" />
+            </Principal>
+            <Dependent Role="Dava">
+              <PropertyRef Name="AvukatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dava_Kullanici">
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+          <End Role="Dava" Type="Self.Dava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Dava">
+              <PropertyRef Name="KaydiGirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dava_Kullanici1">
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+          <End Role="Dava" Type="Self.Dava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Dava">
+              <PropertyRef Name="KaydiDegistirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dava_Mahkeme">
+          <End Role="Mahkeme" Type="Self.Mahkeme" Multiplicity="0..1" />
+          <End Role="Dava" Type="Self.Dava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mahkeme">
+              <PropertyRef Name="MahkemeID" />
+            </Principal>
+            <Dependent Role="Dava">
+              <PropertyRef Name="MahkemeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KullaniciYetki_Kullanici">
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+          <End Role="KullaniciYetki" Type="Self.KullaniciYetki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="KullaniciYetki">
+              <PropertyRef Name="KaydiGirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KullaniciYetki_Kullanici1">
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+          <End Role="KullaniciYetki" Type="Self.KullaniciYetki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="KullaniciYetki">
+              <PropertyRef Name="KaydiDegistirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mahkeme_ililce">
+          <End Role="ililce" Type="Self.ililce" Multiplicity="0..1" />
+          <End Role="Mahkeme" Type="Self.Mahkeme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ililce">
+              <PropertyRef Name="ILID" />
+            </Principal>
+            <Dependent Role="Mahkeme">
+              <PropertyRef Name="ILID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mahkeme_Kullanici">
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="1" />
+          <End Role="Mahkeme" Type="Self.Mahkeme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Mahkeme">
+              <PropertyRef Name="KaydiGirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mahkeme_Kullanici1">
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+          <End Role="Mahkeme" Type="Self.Mahkeme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Mahkeme">
+              <PropertyRef Name="KaydiDegistirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Muvekkil_Adres">
+          <End Role="Adres" Type="Self.Adres" Multiplicity="0..1" />
+          <End Role="Muvekkil" Type="Self.Muvekkil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Adres">
+              <PropertyRef Name="AdresBaglantiliKisiTC" />
+            </Principal>
+            <Dependent Role="Muvekkil">
+              <PropertyRef Name="TC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Muvekkil_ililce">
+          <End Role="ililce" Type="Self.ililce" Multiplicity="0..1" />
+          <End Role="Muvekkil" Type="Self.Muvekkil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ililce">
+              <PropertyRef Name="ILID" />
+            </Principal>
+            <Dependent Role="Muvekkil">
+              <PropertyRef Name="ILID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Muvekkil_Kullanici">
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+          <End Role="Muvekkil" Type="Self.Muvekkil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Muvekkil">
+              <PropertyRef Name="KaydiGirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Muvekkil_Kullanici1">
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+          <End Role="Muvekkil" Type="Self.Muvekkil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Muvekkil">
+              <PropertyRef Name="KaydiDegistirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Muvekkil_NufusDetay">
+          <End Role="NufusDetay" Type="Self.NufusDetay" Multiplicity="0..1" />
+          <End Role="Muvekkil" Type="Self.Muvekkil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NufusDetay">
+              <PropertyRef Name="NufusBaglantiliKisiTC" />
+            </Principal>
+            <Dependent Role="Muvekkil">
+              <PropertyRef Name="TC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NufusDetay_ililce">
+          <End Role="ililce" Type="Self.ililce" Multiplicity="0..1" />
+          <End Role="NufusDetay" Type="Self.NufusDetay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ililce">
+              <PropertyRef Name="ILID" />
+            </Principal>
+            <Dependent Role="NufusDetay">
+              <PropertyRef Name="ILID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NufusDetay_Kullanici">
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+          <End Role="NufusDetay" Type="Self.NufusDetay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="NufusDetay">
+              <PropertyRef Name="KaydiGirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NufusDetay_Kullanici1">
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+          <End Role="NufusDetay" Type="Self.NufusDetay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="NufusDetay">
+              <PropertyRef Name="KaydiDegistirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Web_Kullanici">
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+          <End Role="Web" Type="Self.Web" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Web">
+              <PropertyRef Name="KaydiGirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Web_Kullanici1">
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+          <End Role="Web" Type="Self.Web" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Web">
+              <PropertyRef Name="KaydiDegistirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="mukellefyeniModelStoreContainer">
+          <EntitySet Name="Adres" EntityType="Self.Adres" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ajanda" EntityType="Self.Ajanda" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Avukat" EntityType="Self.Avukat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BuroBilgileri" EntityType="Self.BuroBilgileri" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Celse" EntityType="Self.Celse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dava" EntityType="Self.Dava" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ililce" EntityType="Self.ililce" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kullanici" EntityType="Self.Kullanici" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KullaniciYetki" EntityType="Self.KullaniciYetki" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mahkeme" EntityType="Self.Mahkeme" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Muvekkil" EntityType="Self.Muvekkil" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NufusDetay" EntityType="Self.NufusDetay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Web" EntityType="Self.Web" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Adres_ililce" Association="Self.FK_Adres_ililce">
+            <End Role="ililce" EntitySet="ililce" />
+            <End Role="Adres" EntitySet="Adres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Adres_Kullanici" Association="Self.FK_Adres_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Adres" EntitySet="Adres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Adres_Kullanici1" Association="Self.FK_Adres_Kullanici1">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Adres" EntitySet="Adres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Avukat_Adres" Association="Self.FK_Avukat_Adres">
+            <End Role="Adres" EntitySet="Adres" />
+            <End Role="Avukat" EntitySet="Avukat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Avukat_Kullanici" Association="Self.FK_Avukat_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Avukat" EntitySet="Avukat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Avukat_Kullanici1" Association="Self.FK_Avukat_Kullanici1">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Avukat" EntitySet="Avukat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Avukat_NufusDetay" Association="Self.FK_Avukat_NufusDetay">
+            <End Role="NufusDetay" EntitySet="NufusDetay" />
+            <End Role="Avukat" EntitySet="Avukat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BuroBilgileri_Avukat" Association="Self.FK_BuroBilgileri_Avukat">
+            <End Role="Avukat" EntitySet="Avukat" />
+            <End Role="BuroBilgileri" EntitySet="BuroBilgileri" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BuroBilgileri_ililce" Association="Self.FK_BuroBilgileri_ililce">
+            <End Role="ililce" EntitySet="ililce" />
+            <End Role="BuroBilgileri" EntitySet="BuroBilgileri" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Celse_Ajanda" Association="Self.FK_Celse_Ajanda">
+            <End Role="Ajanda" EntitySet="Ajanda" />
+            <End Role="Celse" EntitySet="Celse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Celse_Avukat" Association="Self.FK_Celse_Avukat">
+            <End Role="Avukat" EntitySet="Avukat" />
+            <End Role="Celse" EntitySet="Celse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Celse_Dava" Association="Self.FK_Celse_Dava">
+            <End Role="Dava" EntitySet="Dava" />
+            <End Role="Celse" EntitySet="Celse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Celse_Kullanici" Association="Self.FK_Celse_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Celse" EntitySet="Celse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Celse_Kullanici1" Association="Self.FK_Celse_Kullanici1">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Celse" EntitySet="Celse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dava_Ajanda" Association="Self.FK_Dava_Ajanda">
+            <End Role="Ajanda" EntitySet="Ajanda" />
+            <End Role="Dava" EntitySet="Dava" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dava_Avukat" Association="Self.FK_Dava_Avukat">
+            <End Role="Avukat" EntitySet="Avukat" />
+            <End Role="Dava" EntitySet="Dava" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dava_Kullanici" Association="Self.FK_Dava_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Dava" EntitySet="Dava" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dava_Kullanici1" Association="Self.FK_Dava_Kullanici1">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Dava" EntitySet="Dava" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dava_Mahkeme" Association="Self.FK_Dava_Mahkeme">
+            <End Role="Mahkeme" EntitySet="Mahkeme" />
+            <End Role="Dava" EntitySet="Dava" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KullaniciYetki_Kullanici" Association="Self.FK_KullaniciYetki_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="KullaniciYetki" EntitySet="KullaniciYetki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KullaniciYetki_Kullanici1" Association="Self.FK_KullaniciYetki_Kullanici1">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="KullaniciYetki" EntitySet="KullaniciYetki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mahkeme_ililce" Association="Self.FK_Mahkeme_ililce">
+            <End Role="ililce" EntitySet="ililce" />
+            <End Role="Mahkeme" EntitySet="Mahkeme" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mahkeme_Kullanici" Association="Self.FK_Mahkeme_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Mahkeme" EntitySet="Mahkeme" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mahkeme_Kullanici1" Association="Self.FK_Mahkeme_Kullanici1">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Mahkeme" EntitySet="Mahkeme" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Muvekkil_Adres" Association="Self.FK_Muvekkil_Adres">
+            <End Role="Adres" EntitySet="Adres" />
+            <End Role="Muvekkil" EntitySet="Muvekkil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Muvekkil_ililce" Association="Self.FK_Muvekkil_ililce">
+            <End Role="ililce" EntitySet="ililce" />
+            <End Role="Muvekkil" EntitySet="Muvekkil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Muvekkil_Kullanici" Association="Self.FK_Muvekkil_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Muvekkil" EntitySet="Muvekkil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Muvekkil_Kullanici1" Association="Self.FK_Muvekkil_Kullanici1">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Muvekkil" EntitySet="Muvekkil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Muvekkil_NufusDetay" Association="Self.FK_Muvekkil_NufusDetay">
+            <End Role="NufusDetay" EntitySet="NufusDetay" />
+            <End Role="Muvekkil" EntitySet="Muvekkil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NufusDetay_ililce" Association="Self.FK_NufusDetay_ililce">
+            <End Role="ililce" EntitySet="ililce" />
+            <End Role="NufusDetay" EntitySet="NufusDetay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NufusDetay_Kullanici" Association="Self.FK_NufusDetay_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="NufusDetay" EntitySet="NufusDetay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NufusDetay_Kullanici1" Association="Self.FK_NufusDetay_Kullanici1">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="NufusDetay" EntitySet="NufusDetay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Web_Kullanici" Association="Self.FK_Web_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Web" EntitySet="Web" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Web_Kullanici1" Association="Self.FK_Web_Kullanici1">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Web" EntitySet="Web" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="mukellefyeniModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Adres" EntityType="mukellefyeniModel.Adres" />
+          <EntitySet Name="Ajanda" EntityType="mukellefyeniModel.Ajanda" />
+          <EntitySet Name="Avukat" EntityType="mukellefyeniModel.Avukat" />
+          <EntitySet Name="BuroBilgileri" EntityType="mukellefyeniModel.BuroBilgileri" />
+          <EntitySet Name="Celse" EntityType="mukellefyeniModel.Celse" />
+          <EntitySet Name="Dava" EntityType="mukellefyeniModel.Dava" />
+          <EntitySet Name="ililce" EntityType="mukellefyeniModel.ililce" />
+          <EntitySet Name="Kullanici" EntityType="mukellefyeniModel.Kullanici" />
+          <EntitySet Name="Mahkeme" EntityType="mukellefyeniModel.Mahkeme" />
+          <EntitySet Name="Muvekkil" EntityType="mukellefyeniModel.Muvekkil" />
+          <EntitySet Name="NufusDetay" EntityType="mukellefyeniModel.NufusDetay" />
+          <EntitySet Name="sysdiagrams" EntityType="mukellefyeniModel.sysdiagrams" />
+          <EntitySet Name="Web" EntityType="mukellefyeniModel.Web" />
+          <AssociationSet Name="FK_Adres_ililce" Association="mukellefyeniModel.FK_Adres_ililce">
+            <End Role="ililce" EntitySet="ililce" />
+            <End Role="Adres" EntitySet="Adres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Adres_Kullanici" Association="mukellefyeniModel.FK_Adres_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Adres" EntitySet="Adres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Adres_Kullanici1" Association="mukellefyeniModel.FK_Adres_Kullanici1">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Adres" EntitySet="Adres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Avukat_Adres" Association="mukellefyeniModel.FK_Avukat_Adres">
+            <End Role="Adres" EntitySet="Adres" />
+            <End Role="Avukat" EntitySet="Avukat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Muvekkil_Adres" Association="mukellefyeniModel.FK_Muvekkil_Adres">
+            <End Role="Adres" EntitySet="Adres" />
+            <End Role="Muvekkil" EntitySet="Muvekkil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Celse_Ajanda" Association="mukellefyeniModel.FK_Celse_Ajanda">
+            <End Role="Ajanda" EntitySet="Ajanda" />
+            <End Role="Celse" EntitySet="Celse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dava_Ajanda" Association="mukellefyeniModel.FK_Dava_Ajanda">
+            <End Role="Ajanda" EntitySet="Ajanda" />
+            <End Role="Dava" EntitySet="Dava" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Avukat_Kullanici" Association="mukellefyeniModel.FK_Avukat_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Avukat" EntitySet="Avukat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Avukat_Kullanici1" Association="mukellefyeniModel.FK_Avukat_Kullanici1">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Avukat" EntitySet="Avukat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Avukat_NufusDetay" Association="mukellefyeniModel.FK_Avukat_NufusDetay">
+            <End Role="NufusDetay" EntitySet="NufusDetay" />
+            <End Role="Avukat" EntitySet="Avukat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BuroBilgileri_Avukat" Association="mukellefyeniModel.FK_BuroBilgileri_Avukat">
+            <End Role="Avukat" EntitySet="Avukat" />
+            <End Role="BuroBilgileri" EntitySet="BuroBilgileri" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Celse_Avukat" Association="mukellefyeniModel.FK_Celse_Avukat">
+            <End Role="Avukat" EntitySet="Avukat" />
+            <End Role="Celse" EntitySet="Celse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dava_Avukat" Association="mukellefyeniModel.FK_Dava_Avukat">
+            <End Role="Avukat" EntitySet="Avukat" />
+            <End Role="Dava" EntitySet="Dava" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BuroBilgileri_ililce" Association="mukellefyeniModel.FK_BuroBilgileri_ililce">
+            <End Role="ililce" EntitySet="ililce" />
+            <End Role="BuroBilgileri" EntitySet="BuroBilgileri" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Celse_Dava" Association="mukellefyeniModel.FK_Celse_Dava">
+            <End Role="Dava" EntitySet="Dava" />
+            <End Role="Celse" EntitySet="Celse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Celse_Kullanici" Association="mukellefyeniModel.FK_Celse_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Celse" EntitySet="Celse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Celse_Kullanici1" Association="mukellefyeniModel.FK_Celse_Kullanici1">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Celse" EntitySet="Celse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dava_Kullanici" Association="mukellefyeniModel.FK_Dava_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Dava" EntitySet="Dava" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dava_Kullanici1" Association="mukellefyeniModel.FK_Dava_Kullanici1">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Dava" EntitySet="Dava" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dava_Mahkeme" Association="mukellefyeniModel.FK_Dava_Mahkeme">
+            <End Role="Mahkeme" EntitySet="Mahkeme" />
+            <End Role="Dava" EntitySet="Dava" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mahkeme_ililce" Association="mukellefyeniModel.FK_Mahkeme_ililce">
+            <End Role="ililce" EntitySet="ililce" />
+            <End Role="Mahkeme" EntitySet="Mahkeme" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Muvekkil_ililce" Association="mukellefyeniModel.FK_Muvekkil_ililce">
+            <End Role="ililce" EntitySet="ililce" />
+            <End Role="Muvekkil" EntitySet="Muvekkil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NufusDetay_ililce" Association="mukellefyeniModel.FK_NufusDetay_ililce">
+            <End Role="ililce" EntitySet="ililce" />
+            <End Role="NufusDetay" EntitySet="NufusDetay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mahkeme_Kullanici" Association="mukellefyeniModel.FK_Mahkeme_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Mahkeme" EntitySet="Mahkeme" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mahkeme_Kullanici1" Association="mukellefyeniModel.FK_Mahkeme_Kullanici1">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Mahkeme" EntitySet="Mahkeme" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Muvekkil_Kullanici" Association="mukellefyeniModel.FK_Muvekkil_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Muvekkil" EntitySet="Muvekkil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Muvekkil_Kullanici1" Association="mukellefyeniModel.FK_Muvekkil_Kullanici1">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Muvekkil" EntitySet="Muvekkil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NufusDetay_Kullanici" Association="mukellefyeniModel.FK_NufusDetay_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="NufusDetay" EntitySet="NufusDetay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NufusDetay_Kullanici1" Association="mukellefyeniModel.FK_NufusDetay_Kullanici1">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="NufusDetay" EntitySet="NufusDetay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Web_Kullanici" Association="mukellefyeniModel.FK_Web_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Web" EntitySet="Web" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Web_Kullanici1" Association="mukellefyeniModel.FK_Web_Kullanici1">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Web" EntitySet="Web" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Muvekkil_NufusDetay" Association="mukellefyeniModel.FK_Muvekkil_NufusDetay">
+            <End Role="NufusDetay" EntitySet="NufusDetay" />
+            <End Role="Muvekkil" EntitySet="Muvekkil" />
+          </AssociationSet>
+          <EntitySet Name="KullaniciYetki" EntityType="mukellefyeniModel.KullaniciYetki" />
+          <AssociationSet Name="FK_KullaniciYetki_Kullanici" Association="mukellefyeniModel.FK_KullaniciYetki_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="KullaniciYetki" EntitySet="KullaniciYetki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KullaniciYetki_Kullanici1" Association="mukellefyeniModel.FK_KullaniciYetki_Kullanici1">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="KullaniciYetki" EntitySet="KullaniciYetki" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="Adres">
+          <Key>
+            <PropertyRef Name="AdresBaglantiliKisiTC" />
+          </Key>
+          <Property Type="String" Name="AdresBaglantiliKisiTC" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="ILID" />
+          <Property Type="String" Name="Telefon1" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Telefon2" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Telefon3" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Fax" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EMail" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SubeKodu" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BankaAdi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HesapNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IBAN" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="AdresAciklama" MaxLength="253" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="KaydiGirenKullaniciID" />
+          <Property Type="Int32" Name="KaydiDegistirenKullaniciID" />
+          <Property Type="DateTime" Name="KayitTarihi" Precision="3" />
+          <Property Type="DateTime" Name="KaydiDegistirmeTarihi" Precision="3" />
+          <Property Type="Boolean" Name="AktifMi" />
+          <NavigationProperty Name="ililce" Relationship="mukellefyeniModel.FK_Adres_ililce" FromRole="Adres" ToRole="ililce" />
+          <NavigationProperty Name="Kullanici" Relationship="mukellefyeniModel.FK_Adres_Kullanici" FromRole="Adres" ToRole="Kullanici" />
+          <NavigationProperty Name="Kullanici1" Relationship="mukellefyeniModel.FK_Adres_Kullanici1" FromRole="Adres" ToRole="Kullanici" />
+          <NavigationProperty Name="Avukat" Relationship="mukellefyeniModel.FK_Avukat_Adres" FromRole="Adres" ToRole="Avukat" />
+          <NavigationProperty Name="Muvekkil" Relationship="mukellefyeniModel.FK_Muvekkil_Adres" FromRole="Adres" ToRole="Muvekkil" />
+        </EntityType>
+        <EntityType Name="Ajanda">
+          <Key>
+            <PropertyRef Name="AjandakKayitID" />
+          </Key>
+          <Property Type="Int32" Name="AjandakKayitID" Nullable="false" />
+          <NavigationProperty Name="Celse" Relationship="mukellefyeniModel.FK_Celse_Ajanda" FromRole="Ajanda" ToRole="Celse" />
+          <NavigationProperty Name="Dava" Relationship="mukellefyeniModel.FK_Dava_Ajanda" FromRole="Ajanda" ToRole="Dava" />
+        </EntityType>
+        <EntityType Name="Avukat">
+          <Key>
+            <PropertyRef Name="AvukatID" />
+          </Key>
+          <Property Type="Int32" Name="AvukatID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="TC" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Adi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Soyadi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Brans" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BaroSicilNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TBBNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="VergiDairesi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="VergiNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Cinsiyet" />
+          <Property Type="Boolean" Name="CalisiyorMu" />
+          <Property Type="Int32" Name="KaydiGirenKullaniciID" />
+          <Property Type="Int32" Name="KaydiDegistirenKullaniciID" />
+          <Property Type="DateTime" Name="KayitTarihi" Precision="3" />
+          <Property Type="DateTime" Name="KaydiDegistirmeTarihi" Precision="3" />
+          <Property Type="Boolean" Name="AktifMi" />
+          <NavigationProperty Name="Adres" Relationship="mukellefyeniModel.FK_Avukat_Adres" FromRole="Avukat" ToRole="Adres" />
+          <NavigationProperty Name="Kullanici" Relationship="mukellefyeniModel.FK_Avukat_Kullanici" FromRole="Avukat" ToRole="Kullanici" />
+          <NavigationProperty Name="Kullanici1" Relationship="mukellefyeniModel.FK_Avukat_Kullanici1" FromRole="Avukat" ToRole="Kullanici" />
+          <NavigationProperty Name="NufusDetay" Relationship="mukellefyeniModel.FK_Avukat_NufusDetay" FromRole="Avukat" ToRole="NufusDetay" />
+          <NavigationProperty Name="BuroBilgileri" Relationship="mukellefyeniModel.FK_BuroBilgileri_Avukat" FromRole="Avukat" ToRole="BuroBilgileri" />
+          <NavigationProperty Name="Celse" Relationship="mukellefyeniModel.FK_Celse_Avukat" FromRole="Avukat" ToRole="Celse" />
+          <NavigationProperty Name="Dava" Relationship="mukellefyeniModel.FK_Dava_Avukat" FromRole="Avukat" ToRole="Dava" />
+        </EntityType>
+        <EntityType Name="BuroBilgileri">
+          <Key>
+            <PropertyRef Name="BuroID" />
+          </Key>
+          <Property Type="Int32" Name="BuroID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ILID" />
+          <Property Type="Int32" Name="SorumluSabitAvukatID" />
+          <Property Type="String" Name="BuroTanimi" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Adres" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Telefon" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Fax" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BaroBilgileri" MaxLength="210" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IcraDairesi" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Avukat" Relationship="mukellefyeniModel.FK_BuroBilgileri_Avukat" FromRole="BuroBilgileri" ToRole="Avukat" />
+          <NavigationProperty Name="ililce" Relationship="mukellefyeniModel.FK_BuroBilgileri_ililce" FromRole="BuroBilgileri" ToRole="ililce" />
+        </EntityType>
+        <EntityType Name="Celse">
+          <Key>
+            <PropertyRef Name="CelseID" />
+          </Key>
+          <Property Type="Int32" Name="CelseID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="DavaID" />
+          <Property Type="Int32" Name="AvukatID" />
+          <Property Type="Int32" Name="AjandakKayitID" />
+          <Property Type="DateTime" Name="CelseTarihi" Precision="3" />
+          <Property Type="String" Name="Hakim" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Savci" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Karar" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ErtelemeMazeret" MaxLength="550" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ErtelemeTarihi" Precision="3" />
+          <Property Type="String" Name="Aciklama" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="KaydiGirenKullaniciID" />
+          <Property Type="Int32" Name="KaydiDegistirenKullaniciID" />
+          <Property Type="DateTime" Name="KayitTarihi" Precision="3" />
+          <Property Type="DateTime" Name="KaydiDegistirmeTarihi" Precision="3" />
+          <Property Type="Boolean" Name="AktifMi" />
+          <NavigationProperty Name="Ajanda" Relationship="mukellefyeniModel.FK_Celse_Ajanda" FromRole="Celse" ToRole="Ajanda" />
+          <NavigationProperty Name="Avukat" Relationship="mukellefyeniModel.FK_Celse_Avukat" FromRole="Celse" ToRole="Avukat" />
+          <NavigationProperty Name="Dava" Relationship="mukellefyeniModel.FK_Celse_Dava" FromRole="Celse" ToRole="Dava" />
+          <NavigationProperty Name="Kullanici" Relationship="mukellefyeniModel.FK_Celse_Kullanici" FromRole="Celse" ToRole="Kullanici" />
+          <NavigationProperty Name="Kullanici1" Relationship="mukellefyeniModel.FK_Celse_Kullanici1" FromRole="Celse" ToRole="Kullanici" />
+        </EntityType>
+        <EntityType Name="Dava">
+          <Key>
+            <PropertyRef Name="DavaID" />
+          </Key>
+          <Property Type="Int32" Name="DavaID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="AvukatID" />
+          <Property Type="Int32" Name="MahkemeID" />
+          <Property Type="Int32" Name="AjandakKayitID" />
+          <Property Type="String" Name="DosyaNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DavaTipi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DavaDurumu" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DavaKonusu" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="DavaAcildigiTarihi" Precision="3" />
+          <Property Type="String" Name="Savci1" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Savci2" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="DavaBedeli" Precision="19" Scale="4" />
+          <Property Type="String" Name="KarsiTarafAvukatAd" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="KarsiTarafAvukatSoyad" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="KarsiTarafAvukatAdres" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="KarsiTarafAvukatTelefon" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Davaci" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Davali" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="KaydiGirenKullaniciID" />
+          <Property Type="Int32" Name="KaydiDegistirenKullaniciID" />
+          <Property Type="DateTime" Name="KayitTarihi" Precision="3" />
+          <Property Type="DateTime" Name="KaydiDegistirmeTarihi" Precision="3" />
+          <Property Type="Boolean" Name="AktifMi" />
+          <NavigationProperty Name="Ajanda" Relationship="mukellefyeniModel.FK_Dava_Ajanda" FromRole="Dava" ToRole="Ajanda" />
+          <NavigationProperty Name="Avukat" Relationship="mukellefyeniModel.FK_Dava_Avukat" FromRole="Dava" ToRole="Avukat" />
+          <NavigationProperty Name="Celse" Relationship="mukellefyeniModel.FK_Celse_Dava" FromRole="Dava" ToRole="Celse" />
+          <NavigationProperty Name="Kullanici" Relationship="mukellefyeniModel.FK_Dava_Kullanici" FromRole="Dava" ToRole="Kullanici" />
+          <NavigationProperty Name="Kullanici1" Relationship="mukellefyeniModel.FK_Dava_Kullanici1" FromRole="Dava" ToRole="Kullanici" />
+          <NavigationProperty Name="Mahkeme" Relationship="mukellefyeniModel.FK_Dava_Mahkeme" FromRole="Dava" ToRole="Mahkeme" />
+        </EntityType>
+        <EntityType Name="ililce">
+          <Key>
+            <PropertyRef Name="ILID" />
+          </Key>
+          <Property Type="Int32" Name="ILID" Nullable="false" />
+          <Property Type="Int32" Name="IlKodu" />
+          <Property Type="String" Name="Il" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="IlceKodu" />
+          <Property Type="String" Name="Ilce" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Adres" Relationship="mukellefyeniModel.FK_Adres_ililce" FromRole="ililce" ToRole="Adres" />
+          <NavigationProperty Name="BuroBilgileri" Relationship="mukellefyeniModel.FK_BuroBilgileri_ililce" FromRole="ililce" ToRole="BuroBilgileri" />
+          <NavigationProperty Name="Mahkeme" Relationship="mukellefyeniModel.FK_Mahkeme_ililce" FromRole="ililce" ToRole="Mahkeme" />
+          <NavigationProperty Name="Muvekkil" Relationship="mukellefyeniModel.FK_Muvekkil_ililce" FromRole="ililce" ToRole="Muvekkil" />
+          <NavigationProperty Name="NufusDetay" Relationship="mukellefyeniModel.FK_NufusDetay_ililce" FromRole="ililce" ToRole="NufusDetay" />
+        </EntityType>
+        <EntityType Name="Kullanici">
+          <Key>
+            <PropertyRef Name="KullaniciID" />
+          </Key>
+          <Property Type="Int32" Name="KullaniciID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Adi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Soyadi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="KullaniciAdi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Sifre" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="KullaniciYetkiID" />
+          <Property Type="Int32" Name="KaydiGirenKullaniciID" />
+          <Property Type="Int32" Name="KaydiDegistirenKullaniciID" />
+          <Property Type="DateTime" Name="KayitTarihi" Precision="3" />
+          <Property Type="DateTime" Name="KaydiDegistirmeTarihi" Precision="3" />
+          <Property Type="Boolean" Name="AktifMi" />
+          <NavigationProperty Name="Adres" Relationship="mukellefyeniModel.FK_Adres_Kullanici" FromRole="Kullanici" ToRole="Adres" />
+          <NavigationProperty Name="Adres1" Relationship="mukellefyeniModel.FK_Adres_Kullanici1" FromRole="Kullanici" ToRole="Adres" />
+          <NavigationProperty Name="Avukat" Relationship="mukellefyeniModel.FK_Avukat_Kullanici" FromRole="Kullanici" ToRole="Avukat" />
+          <NavigationProperty Name="Avukat1" Relationship="mukellefyeniModel.FK_Avukat_Kullanici1" FromRole="Kullanici" ToRole="Avukat" />
+          <NavigationProperty Name="Celse" Relationship="mukellefyeniModel.FK_Celse_Kullanici" FromRole="Kullanici" ToRole="Celse" />
+          <NavigationProperty Name="Celse1" Relationship="mukellefyeniModel.FK_Celse_Kullanici1" FromRole="Kullanici" ToRole="Celse" />
+          <NavigationProperty Name="Dava" Relationship="mukellefyeniModel.FK_Dava_Kullanici" FromRole="Kullanici" ToRole="Dava" />
+          <NavigationProperty Name="Dava1" Relationship="mukellefyeniModel.FK_Dava_Kullanici1" FromRole="Kullanici" ToRole="Dava" />
+          <NavigationProperty Name="Mahkeme" Relationship="mukellefyeniModel.FK_Mahkeme_Kullanici" FromRole="Kullanici" ToRole="Mahkeme" />
+          <NavigationProperty Name="Mahkeme1" Relationship="mukellefyeniModel.FK_Mahkeme_Kullanici1" FromRole="Kullanici" ToRole="Mahkeme" />
+          <NavigationProperty Name="Muvekkil" Relationship="mukellefyeniModel.FK_Muvekkil_Kullanici" FromRole="Kullanici" ToRole="Muvekkil" />
+          <NavigationProperty Name="Muvekkil1" Relationship="mukellefyeniModel.FK_Muvekkil_Kullanici1" FromRole="Kullanici" ToRole="Muvekkil" />
+          <NavigationProperty Name="NufusDetay" Relationship="mukellefyeniModel.FK_NufusDetay_Kullanici" FromRole="Kullanici" ToRole="NufusDetay" />
+          <NavigationProperty Name="NufusDetay1" Relationship="mukellefyeniModel.FK_NufusDetay_Kullanici1" FromRole="Kullanici" ToRole="NufusDetay" />
+          <NavigationProperty Name="Web" Relationship="mukellefyeniModel.FK_Web_Kullanici" FromRole="Kullanici" ToRole="Web" />
+          <NavigationProperty Name="Web1" Relationship="mukellefyeniModel.FK_Web_Kullanici1" FromRole="Kullanici" ToRole="Web" />
+          <NavigationProperty Name="KullaniciYetki" Relationship="mukellefyeniModel.FK_KullaniciYetki_Kullanici" FromRole="Kullanici" ToRole="KullaniciYetki" />
+          <NavigationProperty Name="KullaniciYetki1" Relationship="mukellefyeniModel.FK_KullaniciYetki_Kullanici1" FromRole="Kullanici" ToRole="KullaniciYetki" />
+          </EntityType>
+        <EntityType Name="Mahkeme">
+          <Key>
+            <PropertyRef Name="MahkemeID" />
+          </Key>
+          <Property Type="Int32" Name="MahkemeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="MahkemeAdi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MahkemeNO" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MahkemeTuru" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ILID" />
+          <Property Type="Int32" Name="KaydiGirenKullaniciID" Nullable="false" />
+          <Property Type="Int32" Name="KaydiDegistirenKullaniciID" />
+          <Property Type="DateTime" Name="KayitTarihi" Precision="3" />
+          <Property Type="DateTime" Name="KaydiDegistirmeTarihi" Precision="3" />
+          <Property Type="Boolean" Name="AktifMi" />
+          <NavigationProperty Name="Dava" Relationship="mukellefyeniModel.FK_Dava_Mahkeme" FromRole="Mahkeme" ToRole="Dava" />
+          <NavigationProperty Name="ililce" Relationship="mukellefyeniModel.FK_Mahkeme_ililce" FromRole="Mahkeme" ToRole="ililce" />
+          <NavigationProperty Name="Kullanici" Relationship="mukellefyeniModel.FK_Mahkeme_Kullanici" FromRole="Mahkeme" ToRole="Kullanici" />
+          <NavigationProperty Name="Kullanici1" Relationship="mukellefyeniModel.FK_Mahkeme_Kullanici1" FromRole="Mahkeme" ToRole="Kullanici" />
+        </EntityType>
+        <EntityType Name="Muvekkil">
+          <Key>
+            <PropertyRef Name="MuvekkilID" />
+          </Key>
+          <Property Type="Int32" Name="MuvekkilID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Ad" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Soyad" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TC" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Cinsiyet" />
+          <Property Type="Int32" Name="ILID" />
+          <Property Type="Int32" Name="KaydiGirenKullaniciID" />
+          <Property Type="Int32" Name="KaydiDegistirenKullaniciID" />
+          <Property Type="DateTime" Name="KayitTarihi" Precision="3" />
+          <Property Type="DateTime" Name="KaydiDegistirmeTarihi" Precision="3" />
+          <Property Type="Boolean" Name="AktifMi" />
+          <NavigationProperty Name="Adres" Relationship="mukellefyeniModel.FK_Muvekkil_Adres" FromRole="Muvekkil" ToRole="Adres" />
+          <NavigationProperty Name="ililce" Relationship="mukellefyeniModel.FK_Muvekkil_ililce" FromRole="Muvekkil" ToRole="ililce" />
+          <NavigationProperty Name="Kullanici" Relationship="mukellefyeniModel.FK_Muvekkil_Kullanici" FromRole="Muvekkil" ToRole="Kullanici" />
+          <NavigationProperty Name="Kullanici1" Relationship="mukellefyeniModel.FK_Muvekkil_Kullanici1" FromRole="Muvekkil" ToRole="Kullanici" />
+          <NavigationProperty Name="NufusDetay" Relationship="mukellefyeniModel.FK_Muvekkil_NufusDetay" FromRole="Muvekkil" ToRole="NufusDetay" />
+        </EntityType>
+        <EntityType Name="NufusDetay">
+          <Key>
+            <PropertyRef Name="NufusBaglantiliKisiTC" />
+          </Key>
+          <Property Type="String" Name="NufusBaglantiliKisiTC" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NufusCuzdaniSeriNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NufusCuzdaniNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AnaAdi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BabaAdi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="DogumTarihi" Precision="3" />
+          <Property Type="String" Name="DogumYeri" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Dini" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="KanGrubu" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ILID" />
+          <Property Type="String" Name="Mahalle" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Koy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CiltNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AileSiraNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SiraNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NufusKayitnNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="VerilisTarihi" Precision="3" />
+          <Property Type="String" Name="VerilisNedeni" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="VerildigiYer" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="KaydiGirenKullaniciID" />
+          <Property Type="Int32" Name="KaydiDegistirenKullaniciID" />
+          <Property Type="DateTime" Name="KayitTarihi" Precision="3" />
+          <Property Type="DateTime" Name="KaydiDegistirmeTarihi" Precision="3" />
+          <Property Type="Boolean" Name="AktifMi" />
+          <NavigationProperty Name="Avukat" Relationship="mukellefyeniModel.FK_Avukat_NufusDetay" FromRole="NufusDetay" ToRole="Avukat" />
+          <NavigationProperty Name="ililce" Relationship="mukellefyeniModel.FK_NufusDetay_ililce" FromRole="NufusDetay" ToRole="ililce" />
+          <NavigationProperty Name="Kullanici" Relationship="mukellefyeniModel.FK_NufusDetay_Kullanici" FromRole="NufusDetay" ToRole="Kullanici" />
+          <NavigationProperty Name="Kullanici1" Relationship="mukellefyeniModel.FK_NufusDetay_Kullanici1" FromRole="NufusDetay" ToRole="Kullanici" />
+          <NavigationProperty Name="Muvekkil" Relationship="mukellefyeniModel.FK_Muvekkil_NufusDetay" FromRole="NufusDetay" ToRole="Muvekkil" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="principal_id" Nullable="false" />
+          <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="version" />
+          <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Web">
+          <Key>
+            <PropertyRef Name="WebKayitID" />
+          </Key>
+          <Property Type="Int32" Name="WebKayitID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="URL" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Aciklama" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="KaydiGirenKullaniciID" />
+          <Property Type="Int32" Name="KaydiDegistirenKullaniciID" />
+          <Property Type="DateTime" Name="KayitTarihi" Precision="3" />
+          <Property Type="DateTime" Name="KaydiDegistirmeTarihi" Precision="3" />
+          <Property Type="Boolean" Name="AktifMi" />
+          <NavigationProperty Name="Kullanici" Relationship="mukellefyeniModel.FK_Web_Kullanici" FromRole="Web" ToRole="Kullanici" />
+          <NavigationProperty Name="Kullanici1" Relationship="mukellefyeniModel.FK_Web_Kullanici1" FromRole="Web" ToRole="Kullanici" />
+        </EntityType>
+        <Association Name="FK_Adres_ililce">
+          <End Type="mukellefyeniModel.ililce" Role="ililce" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.Adres" Role="Adres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ililce">
+              <PropertyRef Name="ILID" />
+            </Principal>
+            <Dependent Role="Adres">
+              <PropertyRef Name="ILID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Adres_Kullanici">
+          <End Type="mukellefyeniModel.Kullanici" Role="Kullanici" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.Adres" Role="Adres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Adres">
+              <PropertyRef Name="KaydiGirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Adres_Kullanici1">
+          <End Type="mukellefyeniModel.Kullanici" Role="Kullanici" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.Adres" Role="Adres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Adres">
+              <PropertyRef Name="KaydiDegistirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Avukat_Adres">
+          <End Type="mukellefyeniModel.Adres" Role="Adres" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.Avukat" Role="Avukat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Adres">
+              <PropertyRef Name="AdresBaglantiliKisiTC" />
+            </Principal>
+            <Dependent Role="Avukat">
+              <PropertyRef Name="TC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Muvekkil_Adres">
+          <End Type="mukellefyeniModel.Adres" Role="Adres" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.Muvekkil" Role="Muvekkil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Adres">
+              <PropertyRef Name="AdresBaglantiliKisiTC" />
+            </Principal>
+            <Dependent Role="Muvekkil">
+              <PropertyRef Name="TC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Celse_Ajanda">
+          <End Type="mukellefyeniModel.Ajanda" Role="Ajanda" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.Celse" Role="Celse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ajanda">
+              <PropertyRef Name="AjandakKayitID" />
+            </Principal>
+            <Dependent Role="Celse">
+              <PropertyRef Name="AjandakKayitID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dava_Ajanda">
+          <End Type="mukellefyeniModel.Ajanda" Role="Ajanda" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.Dava" Role="Dava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ajanda">
+              <PropertyRef Name="AjandakKayitID" />
+            </Principal>
+            <Dependent Role="Dava">
+              <PropertyRef Name="AjandakKayitID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Avukat_Kullanici">
+          <End Type="mukellefyeniModel.Kullanici" Role="Kullanici" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.Avukat" Role="Avukat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Avukat">
+              <PropertyRef Name="KaydiGirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Avukat_Kullanici1">
+          <End Type="mukellefyeniModel.Kullanici" Role="Kullanici" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.Avukat" Role="Avukat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Avukat">
+              <PropertyRef Name="KaydiDegistirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Avukat_NufusDetay">
+          <End Type="mukellefyeniModel.NufusDetay" Role="NufusDetay" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.Avukat" Role="Avukat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NufusDetay">
+              <PropertyRef Name="NufusBaglantiliKisiTC" />
+            </Principal>
+            <Dependent Role="Avukat">
+              <PropertyRef Name="TC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BuroBilgileri_Avukat">
+          <End Type="mukellefyeniModel.Avukat" Role="Avukat" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.BuroBilgileri" Role="BuroBilgileri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Avukat">
+              <PropertyRef Name="AvukatID" />
+            </Principal>
+            <Dependent Role="BuroBilgileri">
+              <PropertyRef Name="SorumluSabitAvukatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Celse_Avukat">
+          <End Type="mukellefyeniModel.Avukat" Role="Avukat" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.Celse" Role="Celse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Avukat">
+              <PropertyRef Name="AvukatID" />
+            </Principal>
+            <Dependent Role="Celse">
+              <PropertyRef Name="AvukatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dava_Avukat">
+          <End Type="mukellefyeniModel.Avukat" Role="Avukat" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.Dava" Role="Dava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Avukat">
+              <PropertyRef Name="AvukatID" />
+            </Principal>
+            <Dependent Role="Dava">
+              <PropertyRef Name="AvukatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BuroBilgileri_ililce">
+          <End Type="mukellefyeniModel.ililce" Role="ililce" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.BuroBilgileri" Role="BuroBilgileri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ililce">
+              <PropertyRef Name="ILID" />
+            </Principal>
+            <Dependent Role="BuroBilgileri">
+              <PropertyRef Name="ILID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Celse_Dava">
+          <End Type="mukellefyeniModel.Dava" Role="Dava" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.Celse" Role="Celse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dava">
+              <PropertyRef Name="DavaID" />
+            </Principal>
+            <Dependent Role="Celse">
+              <PropertyRef Name="DavaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Celse_Kullanici">
+          <End Type="mukellefyeniModel.Kullanici" Role="Kullanici" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.Celse" Role="Celse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Celse">
+              <PropertyRef Name="KaydiGirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Celse_Kullanici1">
+          <End Type="mukellefyeniModel.Kullanici" Role="Kullanici" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.Celse" Role="Celse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Celse">
+              <PropertyRef Name="KaydiDegistirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dava_Kullanici">
+          <End Type="mukellefyeniModel.Kullanici" Role="Kullanici" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.Dava" Role="Dava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Dava">
+              <PropertyRef Name="KaydiGirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dava_Kullanici1">
+          <End Type="mukellefyeniModel.Kullanici" Role="Kullanici" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.Dava" Role="Dava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Dava">
+              <PropertyRef Name="KaydiDegistirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dava_Mahkeme">
+          <End Type="mukellefyeniModel.Mahkeme" Role="Mahkeme" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.Dava" Role="Dava" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mahkeme">
+              <PropertyRef Name="MahkemeID" />
+            </Principal>
+            <Dependent Role="Dava">
+              <PropertyRef Name="MahkemeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mahkeme_ililce">
+          <End Type="mukellefyeniModel.ililce" Role="ililce" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.Mahkeme" Role="Mahkeme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ililce">
+              <PropertyRef Name="ILID" />
+            </Principal>
+            <Dependent Role="Mahkeme">
+              <PropertyRef Name="ILID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Muvekkil_ililce">
+          <End Type="mukellefyeniModel.ililce" Role="ililce" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.Muvekkil" Role="Muvekkil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ililce">
+              <PropertyRef Name="ILID" />
+            </Principal>
+            <Dependent Role="Muvekkil">
+              <PropertyRef Name="ILID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NufusDetay_ililce">
+          <End Type="mukellefyeniModel.ililce" Role="ililce" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.NufusDetay" Role="NufusDetay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ililce">
+              <PropertyRef Name="ILID" />
+            </Principal>
+            <Dependent Role="NufusDetay">
+              <PropertyRef Name="ILID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mahkeme_Kullanici">
+          <End Type="mukellefyeniModel.Kullanici" Role="Kullanici" Multiplicity="1" />
+          <End Type="mukellefyeniModel.Mahkeme" Role="Mahkeme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Mahkeme">
+              <PropertyRef Name="KaydiGirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mahkeme_Kullanici1">
+          <End Type="mukellefyeniModel.Kullanici" Role="Kullanici" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.Mahkeme" Role="Mahkeme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Mahkeme">
+              <PropertyRef Name="KaydiDegistirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Muvekkil_Kullanici">
+          <End Type="mukellefyeniModel.Kullanici" Role="Kullanici" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.Muvekkil" Role="Muvekkil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Muvekkil">
+              <PropertyRef Name="KaydiGirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Muvekkil_Kullanici1">
+          <End Type="mukellefyeniModel.Kullanici" Role="Kullanici" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.Muvekkil" Role="Muvekkil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Muvekkil">
+              <PropertyRef Name="KaydiDegistirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NufusDetay_Kullanici">
+          <End Type="mukellefyeniModel.Kullanici" Role="Kullanici" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.NufusDetay" Role="NufusDetay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="NufusDetay">
+              <PropertyRef Name="KaydiGirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NufusDetay_Kullanici1">
+          <End Type="mukellefyeniModel.Kullanici" Role="Kullanici" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.NufusDetay" Role="NufusDetay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="NufusDetay">
+              <PropertyRef Name="KaydiDegistirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Web_Kullanici">
+          <End Type="mukellefyeniModel.Kullanici" Role="Kullanici" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.Web" Role="Web" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Web">
+              <PropertyRef Name="KaydiGirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Web_Kullanici1">
+          <End Type="mukellefyeniModel.Kullanici" Role="Kullanici" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.Web" Role="Web" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="Web">
+              <PropertyRef Name="KaydiDegistirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Muvekkil_NufusDetay">
+          <End Type="mukellefyeniModel.NufusDetay" Role="NufusDetay" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.Muvekkil" Role="Muvekkil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NufusDetay">
+              <PropertyRef Name="NufusBaglantiliKisiTC" />
+            </Principal>
+            <Dependent Role="Muvekkil">
+              <PropertyRef Name="TC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="KullaniciYetki">
+          <Key>
+            <PropertyRef Name="KullaniciYetkiID" />
+          </Key>
+          <Property Name="KullaniciYetkiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KullaniciID" Type="Int32" />
+          <Property Name="KullaniciYetkiAciklama" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KullaniciYetkisi" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="KaydiGirenKullaniciID" Type="Int32" />
+          <Property Name="KaydiDegistirenKullaniciID" Type="Int32" />
+          <Property Name="KayitTarihi" Type="DateTime" Precision="3" />
+          <Property Name="KaydiDegistirmeTarihi" Type="DateTime" Precision="3" />
+          <Property Name="AktifMi" Type="Boolean" />
+          <NavigationProperty Name="Kullanici" Relationship="mukellefyeniModel.FK_KullaniciYetki_Kullanici" FromRole="KullaniciYetki" ToRole="Kullanici" />
+          <NavigationProperty Name="Kullanici1" Relationship="mukellefyeniModel.FK_KullaniciYetki_Kullanici1" FromRole="KullaniciYetki" ToRole="Kullanici" />
+        </EntityType>
+        <Association Name="FK_KullaniciYetki_Kullanici">
+          <End Type="mukellefyeniModel.Kullanici" Role="Kullanici" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.KullaniciYetki" Role="KullaniciYetki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="KullaniciYetki">
+              <PropertyRef Name="KaydiGirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KullaniciYetki_Kullanici1">
+          <End Type="mukellefyeniModel.Kullanici" Role="Kullanici" Multiplicity="0..1" />
+          <End Type="mukellefyeniModel.KullaniciYetki" Role="KullaniciYetki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="KullaniciYetki">
+              <PropertyRef Name="KaydiDegistirenKullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="mukellefyeniModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Adres">
+            <EntityTypeMapping TypeName="mukellefyeniModel.Adres">
+              <MappingFragment StoreEntitySet="Adres">
+                <ScalarProperty Name="AktifMi" ColumnName="AktifMi" />
+                <ScalarProperty Name="KaydiDegistirmeTarihi" ColumnName="KaydiDegistirmeTarihi" />
+                <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+                <ScalarProperty Name="KaydiDegistirenKullaniciID" ColumnName="KaydiDegistirenKullaniciID" />
+                <ScalarProperty Name="KaydiGirenKullaniciID" ColumnName="KaydiGirenKullaniciID" />
+                <ScalarProperty Name="AdresAciklama" ColumnName="AdresAciklama" />
+                <ScalarProperty Name="IBAN" ColumnName="IBAN" />
+                <ScalarProperty Name="HesapNo" ColumnName="HesapNo" />
+                <ScalarProperty Name="BankaAdi" ColumnName="BankaAdi" />
+                <ScalarProperty Name="SubeKodu" ColumnName="SubeKodu" />
+                <ScalarProperty Name="EMail" ColumnName="EMail" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Telefon3" ColumnName="Telefon3" />
+                <ScalarProperty Name="Telefon2" ColumnName="Telefon2" />
+                <ScalarProperty Name="Telefon1" ColumnName="Telefon1" />
+                <ScalarProperty Name="ILID" ColumnName="ILID" />
+                <ScalarProperty Name="AdresBaglantiliKisiTC" ColumnName="AdresBaglantiliKisiTC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ajanda">
+            <EntityTypeMapping TypeName="mukellefyeniModel.Ajanda">
+              <MappingFragment StoreEntitySet="Ajanda">
+                <ScalarProperty Name="AjandakKayitID" ColumnName="AjandakKayitID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Avukat">
+            <EntityTypeMapping TypeName="mukellefyeniModel.Avukat">
+              <MappingFragment StoreEntitySet="Avukat">
+                <ScalarProperty Name="AktifMi" ColumnName="AktifMi" />
+                <ScalarProperty Name="KaydiDegistirmeTarihi" ColumnName="KaydiDegistirmeTarihi" />
+                <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+                <ScalarProperty Name="KaydiDegistirenKullaniciID" ColumnName="KaydiDegistirenKullaniciID" />
+                <ScalarProperty Name="KaydiGirenKullaniciID" ColumnName="KaydiGirenKullaniciID" />
+                <ScalarProperty Name="CalisiyorMu" ColumnName="CalisiyorMu" />
+                <ScalarProperty Name="Cinsiyet" ColumnName="Cinsiyet" />
+                <ScalarProperty Name="VergiNo" ColumnName="VergiNo" />
+                <ScalarProperty Name="VergiDairesi" ColumnName="VergiDairesi" />
+                <ScalarProperty Name="TBBNo" ColumnName="TBBNo" />
+                <ScalarProperty Name="BaroSicilNo" ColumnName="BaroSicilNo" />
+                <ScalarProperty Name="Brans" ColumnName="Brans" />
+                <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+                <ScalarProperty Name="Adi" ColumnName="Adi" />
+                <ScalarProperty Name="TC" ColumnName="TC" />
+                <ScalarProperty Name="AvukatID" ColumnName="AvukatID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BuroBilgileri">
+            <EntityTypeMapping TypeName="mukellefyeniModel.BuroBilgileri">
+              <MappingFragment StoreEntitySet="BuroBilgileri">
+                <ScalarProperty Name="IcraDairesi" ColumnName="IcraDairesi" />
+                <ScalarProperty Name="BaroBilgileri" ColumnName="BaroBilgileri" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="BuroTanimi" ColumnName="BuroTanimi" />
+                <ScalarProperty Name="SorumluSabitAvukatID" ColumnName="SorumluSabitAvukatID" />
+                <ScalarProperty Name="ILID" ColumnName="ILID" />
+                <ScalarProperty Name="BuroID" ColumnName="BuroID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Celse">
+            <EntityTypeMapping TypeName="mukellefyeniModel.Celse">
+              <MappingFragment StoreEntitySet="Celse">
+                <ScalarProperty Name="AktifMi" ColumnName="AktifMi" />
+                <ScalarProperty Name="KaydiDegistirmeTarihi" ColumnName="KaydiDegistirmeTarihi" />
+                <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+                <ScalarProperty Name="KaydiDegistirenKullaniciID" ColumnName="KaydiDegistirenKullaniciID" />
+                <ScalarProperty Name="KaydiGirenKullaniciID" ColumnName="KaydiGirenKullaniciID" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="ErtelemeTarihi" ColumnName="ErtelemeTarihi" />
+                <ScalarProperty Name="ErtelemeMazeret" ColumnName="ErtelemeMazeret" />
+                <ScalarProperty Name="Karar" ColumnName="Karar" />
+                <ScalarProperty Name="Savci" ColumnName="Savci" />
+                <ScalarProperty Name="Hakim" ColumnName="Hakim" />
+                <ScalarProperty Name="CelseTarihi" ColumnName="CelseTarihi" />
+                <ScalarProperty Name="AjandakKayitID" ColumnName="AjandakKayitID" />
+                <ScalarProperty Name="AvukatID" ColumnName="AvukatID" />
+                <ScalarProperty Name="DavaID" ColumnName="DavaID" />
+                <ScalarProperty Name="CelseID" ColumnName="CelseID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dava">
+            <EntityTypeMapping TypeName="mukellefyeniModel.Dava">
+              <MappingFragment StoreEntitySet="Dava">
+                <ScalarProperty Name="AktifMi" ColumnName="AktifMi" />
+                <ScalarProperty Name="KaydiDegistirmeTarihi" ColumnName="KaydiDegistirmeTarihi" />
+                <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+                <ScalarProperty Name="KaydiDegistirenKullaniciID" ColumnName="KaydiDegistirenKullaniciID" />
+                <ScalarProperty Name="KaydiGirenKullaniciID" ColumnName="KaydiGirenKullaniciID" />
+                <ScalarProperty Name="Davali" ColumnName="Davali" />
+                <ScalarProperty Name="Davaci" ColumnName="Davaci" />
+                <ScalarProperty Name="KarsiTarafAvukatTelefon" ColumnName="KarsiTarafAvukatTelefon" />
+                <ScalarProperty Name="KarsiTarafAvukatAdres" ColumnName="KarsiTarafAvukatAdres" />
+                <ScalarProperty Name="KarsiTarafAvukatSoyad" ColumnName="KarsiTarafAvukatSoyad" />
+                <ScalarProperty Name="KarsiTarafAvukatAd" ColumnName="KarsiTarafAvukatAd" />
+                <ScalarProperty Name="DavaBedeli" ColumnName="DavaBedeli" />
+                <ScalarProperty Name="Savci2" ColumnName="Savci2" />
+                <ScalarProperty Name="Savci1" ColumnName="Savci1" />
+                <ScalarProperty Name="DavaAcildigiTarihi" ColumnName="DavaAcildigiTarihi" />
+                <ScalarProperty Name="DavaKonusu" ColumnName="DavaKonusu" />
+                <ScalarProperty Name="DavaDurumu" ColumnName="DavaDurumu" />
+                <ScalarProperty Name="DavaTipi" ColumnName="DavaTipi" />
+                <ScalarProperty Name="DosyaNo" ColumnName="DosyaNo" />
+                <ScalarProperty Name="AjandakKayitID" ColumnName="AjandakKayitID" />
+                <ScalarProperty Name="MahkemeID" ColumnName="MahkemeID" />
+                <ScalarProperty Name="AvukatID" ColumnName="AvukatID" />
+                <ScalarProperty Name="DavaID" ColumnName="DavaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ililce">
+            <EntityTypeMapping TypeName="mukellefyeniModel.ililce">
+              <MappingFragment StoreEntitySet="ililce">
+                <ScalarProperty Name="Ilce" ColumnName="Ilce" />
+                <ScalarProperty Name="IlceKodu" ColumnName="IlceKodu" />
+                <ScalarProperty Name="Il" ColumnName="Il" />
+                <ScalarProperty Name="IlKodu" ColumnName="IlKodu" />
+                <ScalarProperty Name="ILID" ColumnName="ILID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kullanici">
+            <EntityTypeMapping TypeName="mukellefyeniModel.Kullanici">
+              <MappingFragment StoreEntitySet="Kullanici">
+                <ScalarProperty Name="AktifMi" ColumnName="AktifMi" />
+                <ScalarProperty Name="KaydiDegistirmeTarihi" ColumnName="KaydiDegistirmeTarihi" />
+                <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+                <ScalarProperty Name="KaydiDegistirenKullaniciID" ColumnName="KaydiDegistirenKullaniciID" />
+                <ScalarProperty Name="KaydiGirenKullaniciID" ColumnName="KaydiGirenKullaniciID" />
+                <ScalarProperty Name="KullaniciYetkiID" ColumnName="KullaniciYetkiID" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+                <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+                <ScalarProperty Name="Adi" ColumnName="Adi" />
+                <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mahkeme">
+            <EntityTypeMapping TypeName="mukellefyeniModel.Mahkeme">
+              <MappingFragment StoreEntitySet="Mahkeme">
+                <ScalarProperty Name="AktifMi" ColumnName="AktifMi" />
+                <ScalarProperty Name="KaydiDegistirmeTarihi" ColumnName="KaydiDegistirmeTarihi" />
+                <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+                <ScalarProperty Name="KaydiDegistirenKullaniciID" ColumnName="KaydiDegistirenKullaniciID" />
+                <ScalarProperty Name="KaydiGirenKullaniciID" ColumnName="KaydiGirenKullaniciID" />
+                <ScalarProperty Name="ILID" ColumnName="ILID" />
+                <ScalarProperty Name="MahkemeTuru" ColumnName="MahkemeTuru" />
+                <ScalarProperty Name="MahkemeNO" ColumnName="MahkemeNO" />
+                <ScalarProperty Name="MahkemeAdi" ColumnName="MahkemeAdi" />
+                <ScalarProperty Name="MahkemeID" ColumnName="MahkemeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Muvekkil">
+            <EntityTypeMapping TypeName="mukellefyeniModel.Muvekkil">
+              <MappingFragment StoreEntitySet="Muvekkil">
+                <ScalarProperty Name="AktifMi" ColumnName="AktifMi" />
+                <ScalarProperty Name="KaydiDegistirmeTarihi" ColumnName="KaydiDegistirmeTarihi" />
+                <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+                <ScalarProperty Name="KaydiDegistirenKullaniciID" ColumnName="KaydiDegistirenKullaniciID" />
+                <ScalarProperty Name="KaydiGirenKullaniciID" ColumnName="KaydiGirenKullaniciID" />
+                <ScalarProperty Name="ILID" ColumnName="ILID" />
+                <ScalarProperty Name="Cinsiyet" ColumnName="Cinsiyet" />
+                <ScalarProperty Name="TC" ColumnName="TC" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="MuvekkilID" ColumnName="MuvekkilID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NufusDetay">
+            <EntityTypeMapping TypeName="mukellefyeniModel.NufusDetay">
+              <MappingFragment StoreEntitySet="NufusDetay">
+                <ScalarProperty Name="AktifMi" ColumnName="AktifMi" />
+                <ScalarProperty Name="KaydiDegistirmeTarihi" ColumnName="KaydiDegistirmeTarihi" />
+                <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+                <ScalarProperty Name="KaydiDegistirenKullaniciID" ColumnName="KaydiDegistirenKullaniciID" />
+                <ScalarProperty Name="KaydiGirenKullaniciID" ColumnName="KaydiGirenKullaniciID" />
+                <ScalarProperty Name="VerildigiYer" ColumnName="VerildigiYer" />
+                <ScalarProperty Name="VerilisNedeni" ColumnName="VerilisNedeni" />
+                <ScalarProperty Name="VerilisTarihi" ColumnName="VerilisTarihi" />
+                <ScalarProperty Name="NufusKayitnNo" ColumnName="NufusKayitnNo" />
+                <ScalarProperty Name="SiraNo" ColumnName="SiraNo" />
+                <ScalarProperty Name="AileSiraNo" ColumnName="AileSiraNo" />
+                <ScalarProperty Name="CiltNo" ColumnName="CiltNo" />
+                <ScalarProperty Name="Koy" ColumnName="Koy" />
+                <ScalarProperty Name="Mahalle" ColumnName="Mahalle" />
+                <ScalarProperty Name="ILID" ColumnName="ILID" />
+                <ScalarProperty Name="KanGrubu" ColumnName="KanGrubu" />
+                <ScalarProperty Name="Dini" ColumnName="Dini" />
+                <ScalarProperty Name="DogumYeri" ColumnName="DogumYeri" />
+                <ScalarProperty Name="DogumTarihi" ColumnName="DogumTarihi" />
+                <ScalarProperty Name="BabaAdi" ColumnName="BabaAdi" />
+                <ScalarProperty Name="AnaAdi" ColumnName="AnaAdi" />
+                <ScalarProperty Name="NufusCuzdaniNo" ColumnName="NufusCuzdaniNo" />
+                <ScalarProperty Name="NufusCuzdaniSeriNo" ColumnName="NufusCuzdaniSeriNo" />
+                <ScalarProperty Name="NufusBaglantiliKisiTC" ColumnName="NufusBaglantiliKisiTC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="mukellefyeniModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Web">
+            <EntityTypeMapping TypeName="mukellefyeniModel.Web">
+              <MappingFragment StoreEntitySet="Web">
+                <ScalarProperty Name="AktifMi" ColumnName="AktifMi" />
+                <ScalarProperty Name="KaydiDegistirmeTarihi" ColumnName="KaydiDegistirmeTarihi" />
+                <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+                <ScalarProperty Name="KaydiDegistirenKullaniciID" ColumnName="KaydiDegistirenKullaniciID" />
+                <ScalarProperty Name="KaydiGirenKullaniciID" ColumnName="KaydiGirenKullaniciID" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="WebKayitID" ColumnName="WebKayitID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KullaniciYetki">
+            <EntityTypeMapping TypeName="mukellefyeniModel.KullaniciYetki">
+              <MappingFragment StoreEntitySet="KullaniciYetki">
+                <ScalarProperty Name="AktifMi" ColumnName="AktifMi" />
+                <ScalarProperty Name="KaydiDegistirmeTarihi" ColumnName="KaydiDegistirmeTarihi" />
+                <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+                <ScalarProperty Name="KaydiDegistirenKullaniciID" ColumnName="KaydiDegistirenKullaniciID" />
+                <ScalarProperty Name="KaydiGirenKullaniciID" ColumnName="KaydiGirenKullaniciID" />
+                <ScalarProperty Name="KullaniciYetkisi" ColumnName="KullaniciYetkisi" />
+                <ScalarProperty Name="KullaniciYetkiAciklama" ColumnName="KullaniciYetkiAciklama" />
+                <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
+                <ScalarProperty Name="KullaniciYetkiID" ColumnName="KullaniciYetkiID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

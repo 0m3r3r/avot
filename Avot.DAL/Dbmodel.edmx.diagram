@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4a0db1419ca9490183b13e3fedd7c713" Name="Diagram1" ZoomLevel="79">
+        <EntityTypeShape EntityType="mukellefyeniModel.Adres" Width="1.5" PointX="7.2765227515606785" PointY="1.1745298361287127" />
+        <EntityTypeShape EntityType="mukellefyeniModel.Ajanda" Width="1.5" PointX="10.136437821265513" PointY="2.5549603563523666" />
+        <EntityTypeShape EntityType="mukellefyeniModel.Avukat" Width="1.5" PointX="6.2342617801550126" PointY="17.133025028339134" />
+        <EntityTypeShape EntityType="mukellefyeniModel.BuroBilgileri" Width="1.5" PointX="5.5521348275021349" PointY="24.261361684771888" />
+        <EntityTypeShape EntityType="mukellefyeniModel.Celse" Width="1.5" PointX="0.963760061638318" PointY="26.03367425223518" />
+        <EntityTypeShape EntityType="mukellefyeniModel.Dava" Width="1.5" PointX="8.5303451607610778" PointY="31.524940222280538" />
+        <EntityTypeShape EntityType="mukellefyeniModel.ililce" Width="1.5" PointX="2.8862534737616095" PointY="14.941759265466482" />
+        <EntityTypeShape EntityType="mukellefyeniModel.Kullanici" Width="1.5" PointX="4.625" PointY="15.125" />
+        <EntityTypeShape EntityType="mukellefyeniModel.Mahkeme" Width="1.5" PointX="10.291407308676936" PointY="16.644541256429878" />
+        <EntityTypeShape EntityType="mukellefyeniModel.Muvekkil" Width="1.5" PointX="2.21501758611529" PointY="26.867806432241483" />
+        <EntityTypeShape EntityType="mukellefyeniModel.NufusDetay" Width="1.5" PointX="7.4848479756549224" PointY="14.534123382779827" />
+        <EntityTypeShape EntityType="mukellefyeniModel.sysdiagrams" Width="1.5" PointX="0.09793639746398497" PointY="16.667278968108484" />
+        <EntityTypeShape EntityType="mukellefyeniModel.Web" Width="1.5" PointX="10.476057098468791" PointY="3.2302089497587687" />
+        <AssociationConnector Association="mukellefyeniModel.FK_Adres_ililce" />
+        <AssociationConnector Association="mukellefyeniModel.FK_Adres_Kullanici" />
+        <AssociationConnector Association="mukellefyeniModel.FK_Adres_Kullanici1" />
+        <AssociationConnector Association="mukellefyeniModel.FK_Avukat_Adres" />
+        <AssociationConnector Association="mukellefyeniModel.FK_Muvekkil_Adres" />
+        <AssociationConnector Association="mukellefyeniModel.FK_Celse_Ajanda" />
+        <AssociationConnector Association="mukellefyeniModel.FK_Dava_Ajanda" />
+        <AssociationConnector Association="mukellefyeniModel.FK_Avukat_Kullanici" />
+        <AssociationConnector Association="mukellefyeniModel.FK_Avukat_Kullanici1" />
+        <AssociationConnector Association="mukellefyeniModel.FK_Avukat_NufusDetay" />
+        <AssociationConnector Association="mukellefyeniModel.FK_BuroBilgileri_Avukat" />
+        <AssociationConnector Association="mukellefyeniModel.FK_Celse_Avukat" />
+        <AssociationConnector Association="mukellefyeniModel.FK_Dava_Avukat" />
+        <AssociationConnector Association="mukellefyeniModel.FK_BuroBilgileri_ililce" />
+        <AssociationConnector Association="mukellefyeniModel.FK_Celse_Dava" />
+        <AssociationConnector Association="mukellefyeniModel.FK_Celse_Kullanici" />
+        <AssociationConnector Association="mukellefyeniModel.FK_Celse_Kullanici1" />
+        <AssociationConnector Association="mukellefyeniModel.FK_Dava_Kullanici" />
+        <AssociationConnector Association="mukellefyeniModel.FK_Dava_Kullanici1" />
+        <AssociationConnector Association="mukellefyeniModel.FK_Dava_Mahkeme" />
+        <AssociationConnector Association="mukellefyeniModel.FK_Mahkeme_ililce" />
+        <AssociationConnector Association="mukellefyeniModel.FK_Muvekkil_ililce" />
+        <AssociationConnector Association="mukellefyeniModel.FK_NufusDetay_ililce" />
+        <AssociationConnector Association="mukellefyeniModel.FK_Mahkeme_Kullanici" />
+        <AssociationConnector Association="mukellefyeniModel.FK_Mahkeme_Kullanici1" />
+        <AssociationConnector Association="mukellefyeniModel.FK_Muvekkil_Kullanici" />
+        <AssociationConnector Association="mukellefyeniModel.FK_Muvekkil_Kullanici1" />
+        <AssociationConnector Association="mukellefyeniModel.FK_NufusDetay_Kullanici" />
+        <AssociationConnector Association="mukellefyeniModel.FK_NufusDetay_Kullanici1" />
+        <AssociationConnector Association="mukellefyeniModel.FK_Web_Kullanici" />
+        <AssociationConnector Association="mukellefyeniModel.FK_Web_Kullanici1" />
+        <AssociationConnector Association="mukellefyeniModel.FK_Muvekkil_NufusDetay" />
+        <EntityTypeShape EntityType="mukellefyeniModel.KullaniciYetki" Width="1.5" PointX="6.875" PointY="9.875" />
+        <AssociationConnector Association="mukellefyeniModel.FK_KullaniciYetki_Kullanici" />
+        <AssociationConnector Association="mukellefyeniModel.FK_KullaniciYetki_Kullanici1" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

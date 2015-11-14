@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ClsReport" targetNamespace="http://tempuri.org/ClsReport.xsd" xmlns:mstns="http://tempuri.org/ClsReport.xsd" xmlns="http://tempuri.org/ClsReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="mukellefyeniConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="mukellefyeniConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Avot.Forms.Properties.Settings.GlobalReference.Default.mukellefyeniConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="mukellefyeniConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Avukat.Adi, Avukat.Soyadi, Celse.DavaID, Celse.CelseID, Celse.AvukatID, Celse.Hakim, Celse.Savci, Celse.Karar
+FROM            Avukat INNER JOIN
+                         Celse ON Avukat.AvukatID = Celse.AvukatID INNER JOIN
+                         Dava ON Avukat.AvukatID = Dava.AvukatID AND Celse.DavaID = Dava.DavaID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Adi" DataSetColumn="Adi" />
+              <Mapping SourceColumn="Soyadi" DataSetColumn="Soyadi" />
+              <Mapping SourceColumn="DavaID" DataSetColumn="DavaID" />
+              <Mapping SourceColumn="CelseID" DataSetColumn="CelseID" />
+              <Mapping SourceColumn="AvukatID" DataSetColumn="AvukatID" />
+              <Mapping SourceColumn="Hakim" DataSetColumn="Hakim" />
+              <Mapping SourceColumn="Savci" DataSetColumn="Savci" />
+              <Mapping SourceColumn="Karar" DataSetColumn="Karar" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ClsReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ClsReport" msprop:Generator_UserDSName="ClsReport">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Adi" msprop:Generator_ColumnVarNameInTable="columnAdi" msprop:Generator_ColumnPropNameInRow="Adi" msprop:Generator_ColumnPropNameInTable="AdiColumn" msprop:Generator_UserColumnName="Adi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Soyadi" msprop:Generator_ColumnVarNameInTable="columnSoyadi" msprop:Generator_ColumnPropNameInRow="Soyadi" msprop:Generator_ColumnPropNameInTable="SoyadiColumn" msprop:Generator_UserColumnName="Soyadi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DavaID" msprop:Generator_ColumnVarNameInTable="columnDavaID" msprop:Generator_ColumnPropNameInRow="DavaID" msprop:Generator_ColumnPropNameInTable="DavaIDColumn" msprop:Generator_UserColumnName="DavaID" type="xs:int" minOccurs="0" />
+              <xs:element name="CelseID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCelseID" msprop:Generator_ColumnPropNameInRow="CelseID" msprop:Generator_ColumnPropNameInTable="CelseIDColumn" msprop:Generator_UserColumnName="CelseID" type="xs:int" />
+              <xs:element name="AvukatID" msprop:Generator_ColumnVarNameInTable="columnAvukatID" msprop:Generator_ColumnPropNameInRow="AvukatID" msprop:Generator_ColumnPropNameInTable="AvukatIDColumn" msprop:Generator_UserColumnName="AvukatID" type="xs:int" minOccurs="0" />
+              <xs:element name="Hakim" msprop:Generator_ColumnVarNameInTable="columnHakim" msprop:Generator_ColumnPropNameInRow="Hakim" msprop:Generator_ColumnPropNameInTable="HakimColumn" msprop:Generator_UserColumnName="Hakim" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Savci" msprop:Generator_ColumnVarNameInTable="columnSavci" msprop:Generator_ColumnPropNameInRow="Savci" msprop:Generator_ColumnPropNameInTable="SavciColumn" msprop:Generator_UserColumnName="Savci" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Karar" msprop:Generator_ColumnVarNameInTable="columnKarar" msprop:Generator_ColumnPropNameInRow="Karar" msprop:Generator_ColumnPropNameInTable="KararColumn" msprop:Generator_UserColumnName="Karar" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTable1" />
+      <xs:field xpath="mstns:CelseID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

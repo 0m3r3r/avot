@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLL", "BLL", "{3DF554E3-96FD-41F2-A598-EDB5D3FCE8EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{DF983572-7FE6-443D-ADBB-953DB1079FB2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PL", "PL", "{F3A76E16-2697-46BE-A3CA-4BBB799AF752}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avot.Service", "Avot.service\Avot.Service.csproj", "{344097EA-EFC9-45E4-9EB5-729E8CA146A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avot.DAO", "Avot.DAO\Avot.DAO.csproj", "{6CF634DD-8EE8-4357-BCB0-0F4890289635}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avot.ORM", "Avot.DAL\Avot.ORM.csproj", "{7835900F-2C9D-469B-A639-DA8956A7E698}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avot.Forms", "Avot.Forms\Avot.Forms.csproj", "{52EBFD46-62CB-4AFE-BDA4-1A96CF4ABB54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Windows.Forms.Ribbon35", "System.Windows.Forms.Ribbon\System.Windows.Forms.Ribbon35.csproj", "{46A18A55-5AE8-49CE-91CD-C7421B642E7E}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://avot.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Avot.DAL\\Avot.ORM.csproj
+		SccProjectTopLevelParentUniqueName1 = Avot.sln
+		SccProjectName1 = Avot.DAL
+		SccLocalPath1 = Avot.DAL
+		SccProjectUniqueName2 = Avot.DAO\\Avot.DAO.csproj
+		SccProjectTopLevelParentUniqueName2 = Avot.sln
+		SccProjectName2 = Avot.DAO
+		SccLocalPath2 = Avot.DAO
+		SccProjectUniqueName3 = Avot.Forms\\Avot.Forms.csproj
+		SccProjectTopLevelParentUniqueName3 = Avot.sln
+		SccProjectName3 = Avot.Forms
+		SccLocalPath3 = Avot.Forms
+		SccProjectUniqueName4 = Avot.service\\Avot.Service.csproj
+		SccProjectTopLevelParentUniqueName4 = Avot.sln
+		SccProjectName4 = Avot.service
+		SccLocalPath4 = Avot.service
+		SccProjectUniqueName5 = System.Windows.Forms.Ribbon\\System.Windows.Forms.Ribbon35.csproj
+		SccProjectTopLevelParentUniqueName5 = Avot.sln
+		SccProjectName5 = System.Windows.Forms.Ribbon
+		SccLocalPath5 = System.Windows.Forms.Ribbon
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{344097EA-EFC9-45E4-9EB5-729E8CA146A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{344097EA-EFC9-45E4-9EB5-729E8CA146A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{344097EA-EFC9-45E4-9EB5-729E8CA146A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{344097EA-EFC9-45E4-9EB5-729E8CA146A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CF634DD-8EE8-4357-BCB0-0F4890289635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CF634DD-8EE8-4357-BCB0-0F4890289635}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CF634DD-8EE8-4357-BCB0-0F4890289635}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CF634DD-8EE8-4357-BCB0-0F4890289635}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7835900F-2C9D-469B-A639-DA8956A7E698}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7835900F-2C9D-469B-A639-DA8956A7E698}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7835900F-2C9D-469B-A639-DA8956A7E698}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7835900F-2C9D-469B-A639-DA8956A7E698}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52EBFD46-62CB-4AFE-BDA4-1A96CF4ABB54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52EBFD46-62CB-4AFE-BDA4-1A96CF4ABB54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52EBFD46-62CB-4AFE-BDA4-1A96CF4ABB54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52EBFD46-62CB-4AFE-BDA4-1A96CF4ABB54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46A18A55-5AE8-49CE-91CD-C7421B642E7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46A18A55-5AE8-49CE-91CD-C7421B642E7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46A18A55-5AE8-49CE-91CD-C7421B642E7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46A18A55-5AE8-49CE-91CD-C7421B642E7E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{344097EA-EFC9-45E4-9EB5-729E8CA146A3} = {3DF554E3-96FD-41F2-A598-EDB5D3FCE8EF}
+		{6CF634DD-8EE8-4357-BCB0-0F4890289635} = {3DF554E3-96FD-41F2-A598-EDB5D3FCE8EF}
+		{7835900F-2C9D-469B-A639-DA8956A7E698} = {DF983572-7FE6-443D-ADBB-953DB1079FB2}
+		{52EBFD46-62CB-4AFE-BDA4-1A96CF4ABB54} = {F3A76E16-2697-46BE-A3CA-4BBB799AF752}
+		{46A18A55-5AE8-49CE-91CD-C7421B642E7E} = {F3A76E16-2697-46BE-A3CA-4BBB799AF752}
+	EndGlobalSection
+EndGlobal
